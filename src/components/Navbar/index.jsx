@@ -3,7 +3,8 @@ import Navbar  from 'react-bootstrap/Navbar';
 import Nav  from 'react-bootstrap/Nav';
 import {Link} from "react-router-dom";
 
-function NavContainer() {
+function NavContainer(props) {
+  console.log(props)
   return (
     <Navbar bg="dark navbar-dark" expand="lg">
       <Container fluid>
@@ -15,13 +16,10 @@ function NavContainer() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            {/* <Nav.Link  disabled> */}
             <Link to = "/" className='text-light text-decoration-none px-2'>Home</Link>
-            {/* </Nav.Link> */}
 
-            {/* <Nav.Link  disabled> */}
             <Link to = "/cart" className='text-light text-decoration-none px-2'>Cart</Link>
-            {/* </Nav.Link> */}
+            <span className='text-white'>{props.amount}</span>
 
           </Nav>
          

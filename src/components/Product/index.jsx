@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  console.log(props);
-  const { image, title, price,id} = props.product;
+  console.log(props)
+  const { image, title, price, id } = props.product;
+
   return (
     <div className="col-md-3 text-center">
       <div className="content h-100">
@@ -11,8 +12,8 @@ const Product = (props) => {
         </Link>
         <p>{title}</p>
         <span className="mb-2 d-block">{price} Egp</span>
-        {/* <p>quantity:{props.count}</p>
-        <button className="btn btn-success d-block mx-auto" onClick={props.increaseQuantity}>+</button> */}
+
+        <button className="btn btn-success d-block mx-auto" onClick={props.increaseCartAmount}>+</button>
       </div>
     </div>
   );
