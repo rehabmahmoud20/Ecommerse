@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../Product";
 
-const Home = (props) => {
-  console.log(props)
+const Home = () => {
   const [products, setProducts] = useState(null);
   useEffect(() => {
     fetchData();
@@ -17,11 +16,9 @@ const Home = (props) => {
   }
 
   return (
-    <div className="container">
-      <div className="row g-5">
-        {products.map((e) => <Product product={e} key={e.id} increaseCartAmount= {props.increaseAction} />)}
+      <div className="row  gy-3">
+        {products.map((e) => <Product product={e} key={e.id} />)}
       </div>
-    </div>
   );
 };
 export default Home;

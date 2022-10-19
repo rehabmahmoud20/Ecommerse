@@ -1,0 +1,15 @@
+.number{
+    width: 30%;
+    border-radius: 4px;
+    box-shadow: 0 0 10px white;
+    padding: 3rem;
+    font-size: 4rem;
+    margin: 0 auto 6rem;
+}
+.content{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}

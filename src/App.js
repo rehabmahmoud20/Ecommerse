@@ -7,30 +7,35 @@ import Cart from "./components/Cart";
 import Productcomponent from "./components/Productcomponent";
 import Notfound from "./components/Notfound/Notfound";
 import { useState } from "react";
-
-
+import SupportUs from "./components/SupportUs"
+import Total from "./components/Total";
 
 
 function App() {
-  const [quantity,setQuantity] = useState(0);
-const increaseCount=()=>{
-  setQuantity(quantity + 1)
-  console.log(quantity)
-} 
+  // const [quantity, setQuantity] = useState(0);
+  // // setting the quantity of the cart amount
+  // const increaseCount = () => {
+  //   setQuantity(quantity + 1);
+  // };
   return (
-    <>     
+    <>
       <BrowserRouter>
-      <NavContainer  amount={quantity}/>
+      <NavContainer  />
+      <section className="container">
+      
         <Routes>
-          <Route path="" element={<Home increaseAction={increaseCount}/>} />
-           
+          <Route path="" element={<Home  />} />
           <Route path="Productcomponent" element={<Productcomponent />}>
-           <Route path=":id" element={<Productcomponent />}/>
+            <Route path=":id" element={<Productcomponent />} />
           </Route>
-
+          <Route path="Total" element={<Total/>} />
           <Route path="cart" element={<Cart />} />
-          <Route path="*" element={<Notfound/>}/>
+
+           <Route path="supportUs" element={<SupportUs />} />
+          <Route path="*" element={<Notfound />} />
         </Routes>
+      </section>
+      
       </BrowserRouter>
     </>
   );
