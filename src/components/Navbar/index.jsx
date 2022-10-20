@@ -4,7 +4,9 @@ import Nav  from 'react-bootstrap/Nav';
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 
+
 function NavContainer() {
+const globalAuthVal = useSelector(state => state.auth.valid)
   const globeCartCount = useSelector((state) =>state.cartAmount.cartVal);
   return (
     <Navbar bg=" navbar-dark mb-5 " expand="lg">
@@ -19,11 +21,13 @@ function NavContainer() {
           >
             <Link to = "/" className='text-light text-decoration-none px-2 fs-4'>Home</Link>
 
-            <Link to = "/cart" className='text-light text-decoration-none px-2 fs-4'>🚐</Link>
+            <Link to = "/cart" className='text-light text-decoration-none px-2 fs-4'>cart</Link>
             <span className='text-white'>{globeCartCount}</span>
 
             <Link to = "/supportUs" className='text-light text-decoration-none px-2 fs-4'>Support Us</Link>
             <Link to = "/Total" className='text-light text-decoration-none px-2 fs-4'>Total Support</Link>
+            <Link to = "/register" className='text-light text-decoration-none px-2 fs-4'>{globalAuthVal?'Sign in':'Sign up' }</Link>
+
 
 
           </Nav>

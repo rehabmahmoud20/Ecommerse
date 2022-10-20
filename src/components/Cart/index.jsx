@@ -1,11 +1,35 @@
-import { useSelector } from "react-redux";
+// import emptyCart from "../../assets/emptyCart.png"
+import { useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+// import { updateCartCount ,decreaseCartCount} from "../../Redux/shoppingslice";
+
+
 
 const Cart = () => {
+  // const dispatch = useDispatch()
+  const[val,setVal] = useState(1)
   const globalProducts = useSelector((state) => state.cartAmount.products);
+  const increaseQantity =()=>{
+    // dispatch(updateCartCount(1));
+    setVal(val+1)
+}
+const decreaseVal =()=>{
+  // dispatch(decreaseCartCount(1));
+
+  if (val > 1 ){
+    setVal(val-1)
+  }else{
+    return;
+  }
+}
+ 
+
 
   return (
     <>
-      {globalProducts.map((e) => {
+      {
+      globalProducts.map((e) => {
+       
         return (
           <article className="row light" key={e.id}>
       <div className="col-md-6 mb-5">
@@ -22,6 +46,13 @@ const Cart = () => {
 
        <p className="fst-italic fw-bolder text-white fs-2 bg-info rounded p-1">{e.price} EGP</p>
        <p className=" mb-5 fs-3">{e.category}</p>
+       <div className="actions d-flex">
+       <button className="rounded-circle" onClick={()=>decreaseVal()}>-</button>
+       <div>{val}</div>
+       <button className="rounded-circle"  onClick={()=>increaseQantity()}>+</button>
+       </div>
+       
+
 
         </div>
       </div>

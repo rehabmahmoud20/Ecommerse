@@ -9,6 +9,8 @@ import Notfound from "./components/Notfound/Notfound";
 import { useState } from "react";
 import SupportUs from "./components/SupportUs"
 import Total from "./components/Total";
+import Register from "./components/Register";
+import Login from "./components/Login";
 
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
       <BrowserRouter>
       <NavContainer  />
       <section className="container">
-      
+         
         <Routes>
           <Route path="" element={<Home  />} />
           <Route path="Productcomponent" element={<Productcomponent />}>
@@ -32,6 +34,10 @@ function App() {
           <Route path="cart" element={<Cart />} />
 
            <Route path="supportUs" element={<SupportUs />} />
+          <Route path="register" element={<Register />} />
+          <Route path="login" element={<Login />} />
+
+
           <Route path="*" element={<Notfound />} />
         </Routes>
       </section>

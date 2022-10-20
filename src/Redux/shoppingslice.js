@@ -4,32 +4,32 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cartVal: 0,
   products: [],
-  // btn state
-  flag: true,
 };
 // reducer => state + action
 export const shoppingslice = createSlice({
   name: "updatingCart",
   initialState,
   reducers: {
-    updateCartCount(state, action) {
-      state.cartVal = state.cartVal + 1;
+    updateCartArray(state, action) {
       const arryCopy = [...state.products];
       const flag = arryCopy.some((e) => {
         return e.id === action.payload.id;
       });
       if (!flag) {
-        state.products=[...state.products,action.payload]
-      }
+        state.products=[...state.products,{...action.payload,quantity:1}]}
     },
-    updateBtnState(state, action) {
-      state.flag = action.payload;
+    updateCartCount(state,action){
+      state.cartVal = state.cartVal + action.payload;
     },
+    decreaseCartCount(state,action){
+      state.cartVal = state.cartVal - action.payload;
+    }
+  
   },
 });
 
 // extract action
 export const { updateCartCount } = shoppingslice.actions;
-// export const { addProdToCart } = shoppingslice.actions;
-export const { updateBtnState } = shoppingslice.actions;
+export const { decreaseCartCount } = shoppingslice.actions;
+export const { updateCartArray } = shoppingslice.actions;
 console.log(shoppingslice)
