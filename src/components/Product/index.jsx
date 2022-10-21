@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updateCartCount } from "../../Redux/shoppingslice";
 import { updateCartArray } from "../../Redux/shoppingslice";
-
 import { useEffect, useState } from "react";
 import "./Produc.css";
 
 const Product = (props) => {
   const dispatch = useDispatch();
-  const cartList = useSelector((state) => state.cartAmount.products);
+  const cartList = useSelector((state) => state.cartAmount.products );
+  console.log(cartList)
 
-  const [flag, setFlag] = useState(false);
-  useEffect(() => {
-    if ( cartList.some((e) => e.id === props.product.id)) {
-   setFlag(true)}},[]);
+  // const [flag, setFlag] = useState(false);
+  // useEffect(() => {
+  //   if ( cartList.some((e) => e.id === props.product.id)) {
+  //  setFlag(true)}},[]);
 
   const increaseCartVal = (prod) => {
     dispatch(updateCartCount(1));
     dispatch(updateCartArray(prod));
-    setFlag(true)
+    // setFlag(true)
   };
   const { image, title, price, id } = props.product;
   return (
@@ -36,7 +36,7 @@ const Product = (props) => {
         <button
           className= "btn btn-info"
           onClick={() => increaseCartVal(props.product)}
-          disabled={flag}
+          // disabled={flag}
         >
           Add to cart
         </button>

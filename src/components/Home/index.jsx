@@ -12,13 +12,25 @@ const Home = () => {
     setProducts(data);
   };
   if (!products) {
-    return <p>not found</p>;
+    return (
+      <div className="row justify-content-center">
+        <div className="col-md-2">
+        <div className="spinner-border text-info " role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        </div>
+       
+        ;
+      </div>
+    );
   }
 
   return (
-      <div className="row  gy-3">
-        {products.map((e) => <Product product={e} key={e.id} />)}
-      </div>
+    <div className="row  gy-3">
+      {products.map((e) => (
+        <Product product={e} key={e.id} />
+      ))}
+    </div>
   );
 };
 export default Home;
