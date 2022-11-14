@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "../Product";
+import Loader from '../Loader'
 
-const Home = () => {
+const Featured = () => {
   const [products, setProducts] = useState(null);
   useEffect(() => {
     fetchData();
@@ -13,24 +14,22 @@ const Home = () => {
   };
   if (!products) {
     return (
-      <div className="row justify-content-center">
-        <div className="col-md-2">
-        <div className="spinner-border text-info " role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-        </div>
-       
-        ;
+      <div className="row  vh-100">
+       <Loader/>
       </div>
     );
   }
 
   return (
-    <div className="row  gy-3">
+    <section className="container">
+<div className="row  gy-3 mt-5">
+  <h2 className="text-center">Our featured products</h2>
       {products.map((e) => (
         <Product product={e} key={e.id} />
       ))}
     </div>
+    </section>
+    
   );
 };
-export default Home;
+export default Featured;

@@ -3,10 +3,19 @@
   text-align: center;
 }
 body{
-  background-color: black;
+  background-color: #EAEDED;
   /* color: black; */
 }
-.container{
-  max-width: 1200px;
-  margin: 0 auto ;
+.nav-bg{
+  background-color: #232F3E
 }
+.btn-color{
+  background-color: #F7CA00;
+}
+.component-height{
+  min-height: 75vh !important;
+}
+.btn-wrapper{
+  width: fit-content;
+}
+

@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateCartCount } from "../../Redux/shoppingslice";
 import { updateCartArray } from "../../Redux/shoppingslice";
 import { useEffect, useState } from "react";
-import "./Produc.css";
 
-const Product = (props) => {
+const ProductLayOut = (props) => {
   const dispatch = useDispatch();
   const cartList = useSelector((state) => state.cartAmount.products );
-
   const [flag, setFlag] = useState(false);
   useEffect(() => {
     if ( cartList.some((e) => e.id === props.product.id)) {
@@ -21,7 +19,7 @@ const Product = (props) => {
   };
   const { image, title, price, id } = props.product;
   return (
-    <div className="col-md-3  text-center ">
+    <div className="col-md-4 mb-5  text-center container ">
       <div className="content p-2 bg-white border border-rounded  rounded">
         <Link to={`/Productcomponent/${id}`}>
           <div className="mb-3" style={{ height: "300px" }}>
@@ -33,7 +31,7 @@ const Product = (props) => {
         </div>
         <span className="mb-2 d-block fst-italic fw-bold">{price } Egp</span>
         <button
-          className= "btn btn-color w-50  mx-auto"
+          className= "btn btn-color w-50  mx-auto "
           onClick={() => increaseCartVal(props.product)}
           disabled={flag}
         >
@@ -43,4 +41,4 @@ const Product = (props) => {
     </div>
   );
 };
-export default Product;
+export default ProductLayOut;

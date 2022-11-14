@@ -24,8 +24,8 @@ if(errors){
   } = useForm({ mode: "onTouched" | "onBlur" });
   console.log(errors);
   return (
-    <Form
-      className="text-white"
+    <Form 
+      className="component-height container pt-5 w-50 "
       onSubmit={handleSubmit((data) => {
         console.log(data);
       })}
@@ -45,7 +45,7 @@ if(errors){
         )}
       </Form.Group>
 
-      <Form.Group as={Col} controlId="formGridPassword">
+      <Form.Group as={Col} controlId="formGridPassword" className="mb-4">
         <Form.Label>Password</Form.Label>
         <Form.Control
           className="mb-2"
@@ -72,9 +72,12 @@ if(errors){
   
     
       {/* submit button */}
-      <Button variant="primary" type="submit">
+      <div className="mx-auto btn-wrapper">
+      <Button  type="submit" className="  btn btn-dark ">
         Submit
       </Button>
+      </div>
+      
     </Form>
   );
 }

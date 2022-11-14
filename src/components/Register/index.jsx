@@ -31,7 +31,7 @@ function Register() {
 
   return (
     <Form
-      className="text-white"
+      className="container component-height w-50 mt-5"
       onSubmit={handleSubmit((data) => {
         if(errors){
           dispatch(validate(true))
@@ -135,9 +135,12 @@ function Register() {
         <Form.Check type="checkbox" label="Remember me" />
       </Form.Group>
       {/* submit button */}
-      <Button variant="primary" type="submit">
+      <div className="mx-auto btn-wrapper">
+
+      <Button type="submit"  className="  btn btn-dark ">
         Submit
       </Button>
+      </div>
     </Form>
   );
 }

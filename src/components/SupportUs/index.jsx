@@ -17,9 +17,9 @@ const SupportUs = () => {
   };
   return (
     <>
-      <section className="content">
+      <section className="content container component-height">
         <p className="text-uppercase fs-1 light text-center mb-5">please support us</p>
-        <div className="number text-center text-white">{globalIncreseCount}</div>
+        <div className="number text-center text-white">{globalIncreseCount} $</div>
         <BtnActions
           increase={increase}
           decrease={decrease}

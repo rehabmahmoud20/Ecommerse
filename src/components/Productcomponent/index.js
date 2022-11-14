@@ -1,7 +1,9 @@
 import "./Productcomponent.css"
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Loader from '../Loader'
 import { useEffect, useState } from "react";
+import 'react-loading-skeleton/dist/skeleton.css'
 const Productcomponent = () => {
   const [prdtData, setprdtData] = useState(null);
   const params = useParams();
@@ -12,12 +14,17 @@ const Productcomponent = () => {
     const { data } = await axios.get(`https://fakestoreapi.com/products/${params.id}`);
     setprdtData(data);};
 
-  
-  if (!prdtData) {
-    return <p>not found</p>;
-  }
+
+    if (!prdtData) {
+      return (
+        <div className="row vh-100">
+                <Loader/>;
+        </div>
+      );
+    }
   return (
-    <article className="row light">
+    <article className="container light">
+      <div className="row">
       <div className="col-md-6 ">
         <div className="img-content ">
         <img src={prdtData.image} className="w-75  rounded" alt="product" />
@@ -35,6 +42,8 @@ const Productcomponent = () => {
 
         </div>
       </div>
+      </div>
+      
 
     </article>
   );

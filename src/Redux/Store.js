@@ -11,5 +11,4 @@ auth:authinticationslice.reducer
 
  }
 })
-// console.log(Counterslice)
 
