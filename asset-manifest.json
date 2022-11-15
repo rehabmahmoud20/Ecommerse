@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ecommerse-React/static/css/main.8acdb803.css",
-    "main.js": "/Ecommerse-React/static/js/main.a5fe9789.js",
+    "main.js": "/Ecommerse-React/static/js/main.68577d9f.js",
     "static/js/787.047cb09f.chunk.js": "/Ecommerse-React/static/js/787.047cb09f.chunk.js",
     "static/media/computer.jpg": "/Ecommerse-React/static/media/computer.e8ff861b04373f645d21.jpg",
     "static/media/emptyCart.png": "/Ecommerse-React/static/media/emptyCart.f89ce852dcc23dab8dbb.png",
@@ -14,11 +14,11 @@
     "static/media/electronics.jpg": "/Ecommerse-React/static/media/electronics.6b484f94d3de6f741126.jpg",
     "index.html": "/Ecommerse-React/index.html",
     "main.8acdb803.css.map": "/Ecommerse-React/static/css/main.8acdb803.css.map",
-    "main.a5fe9789.js.map": "/Ecommerse-React/static/js/main.a5fe9789.js.map",
+    "main.68577d9f.js.map": "/Ecommerse-React/static/js/main.68577d9f.js.map",
     "787.047cb09f.chunk.js.map": "/Ecommerse-React/static/js/787.047cb09f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8acdb803.css",
-    "static/js/main.a5fe9789.js"
+    "static/js/main.68577d9f.js"
   ]
 }
