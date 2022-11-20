@@ -18,7 +18,7 @@ const Shop = () => {
                 to="/Jwellary"
                 className="text-light text-decoration-none  fs-4"
               >
-                <img src={jwellary} alt="jwellary" className="img-fluid w-75  d-block mx-auto" style={{height:382.6}}/>
+                <img src={jwellary} alt="jwellary" className="img-fluid w-75  d-block mx-auto" />
               </Link>
             </div>
           </div>

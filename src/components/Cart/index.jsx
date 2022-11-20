@@ -108,7 +108,7 @@ const Cart = () => {
             <div className="container component-height">
  <div className="row justify-content-center">
               <p className="fs-1 mt-4 text-center"> Cart is empty 😥</p>
-              <div className="col-md-6">
+              <div className="col-sm-6">
                 <img src={emptyCart} alt=" empty cart" />
               </div>
             </div>
