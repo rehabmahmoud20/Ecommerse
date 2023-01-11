@@ -53,26 +53,8 @@ function NavContainer() {
             </NavLink>
            
 
-            <NavLink
-              to="/supportUs"
-              className={(navData) =>
-                navData.isActive
-                  ? " border text-light text-decoration-none  fw-bold fs-5 px-1 mx-1"
-                  : "text-light text-decoration-none  fw-bold fs-5 px-1 mx-1"
-              }
-            >
-              Support Us
-            </NavLink>
-            <NavLink
-              to="/Total"
-              className={(navData) =>
-                navData.isActive
-                  ? " border text-light text-decoration-none  fw-bold fs-5 px-1 mx-1"
-                  : "text-light text-decoration-none  fw-bold fs-5 px-1 mx-1"
-              }
-            >
-              Total Support
-            </NavLink>
+         
+         
             <NavLink
               to="/register"
               className={(navData) =>

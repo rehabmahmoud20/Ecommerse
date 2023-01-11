@@ -33,7 +33,7 @@ const Product = (props) => {
         </div>
         <span className="mb-2 d-block fst-italic fw-bold">{price } Egp</span>
         <button
-          className= "btn btn-color w-50  mx-auto"
+          className= "btn btn-info w-50  mx-auto"
           onClick={() => increaseCartVal(props.product)}
           disabled={flag}
         >

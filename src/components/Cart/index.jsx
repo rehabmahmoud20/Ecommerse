@@ -36,12 +36,7 @@ const Cart = () => {
   const remove = (e) => {
     dispatch(removeItem(e));
   };
-  //   <ClipLoader color={color}
-  //   loading={loading}
-  //   size={150}
-  //   aria-label="Loading Spinner"
-  //   data-testid="loader"
-  // />
+ 
 
   return (
     <>
@@ -57,7 +52,7 @@ const Cart = () => {
                 return (
                   <section className="container  component-height">
                     <article className="row light" key={e.id}>
-                    <p>total Price {totalPrice.toFixed(2)}</p>
+                    <p className="h2 my-4">total Price {totalPrice.toFixed(2)} $</p>
                     <div className="col-md-6 mb-5">
                       <div className="img-content ">
                         <img
@@ -80,21 +75,24 @@ const Cart = () => {
                           {e.productPrice.toFixed(2)} EGP
                         </p>
                         <p className=" mb-5 fs-3">{e.category}</p>
-                        <div className="actions d-flex">
+                        <div className="actions d-flex align-items-center justify-content-between">
+                          <div className="d-flex align-items-center gap-3">
                           <button
-                            className="rounded-circle"
+                            className="border p-3 "
                             onClick={() => decreaseVal(e)}
                           >
                             -
                           </button>
                           <div>{e.quantity}</div>
                           <button
-                            className="rounded-circle"
+                            className="border p-3 "
                             onClick={() => increaseQantity(e)}
                           >
                             +
                           </button>
-                          <button onClick={() => remove(e)}>remove</button>
+                          </div>
+                        
+                          <button className="bg-warning border p-3  text-uppercase fw-bold " onClick={() => remove(e)}>remove</button>
                         </div>
                       </div>
                     </div>
